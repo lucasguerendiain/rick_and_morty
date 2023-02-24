@@ -1,0 +1,109 @@
+.CardDiv {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: gray;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    display: inline-block;
+}
+
+.Button {
+    width: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 110;
+    top: 1%;
+    right: 1%;
+    color: red;
+}
+
+.Button:hover {
+    background-color: whitesmoke;
+}
+.Button:hover ~ img {
+    filter: grayscale(100%);
+}
+.Button:hover ~ .Nombre {
+    background-color: transparent;
+    color: black;
+    text-shadow: 3px 3px 5px rgb(255, 0, 0);
+    font-weight: bold;
+    transform: rotate(-90deg);
+    font-size: 65px;
+    left: -30%;
+    top: 30%;
+}
+.Button:hover ~ .Gender {
+    background-color: transparent;
+    font-family: Impact, fantasy;
+    width: 50%;
+    border: 0;
+    font-size: 30px;
+    text-align: start;
+    color: rgb(255, 0, 255);
+}
+.Button:hover ~ .Specie {
+    background-color: transparent;
+    font-family: Luminari, fantasy;
+    width: 50%;
+    font-size: 30px;
+    border: 0;
+    text-align: end;
+    color: rgb(255, 0, 255);
+}
+
+
+.CardDiv img {
+    max-width:100%;
+    max-height:100%;
+    height: 90%;
+    position: relative;
+    top: 0%;
+    left: 0%;
+}
+
+.Nombre {
+    z-index: 100;
+    position: absolute;
+    color: rgb(17, 39, 206);
+    font-size: 30px;
+    font-family: verdana;
+    background-color: rgb(171, 169, 169);
+    left: 0%;
+    top: -5%;
+}
+
+.Nombre:hover {
+    background-color: transparent;
+}
+
+.Specie {
+    z-index: 100;
+    position: absolute;
+    font-size: 24px;
+    width: 50%;
+    height: 10%;
+    bottom: -4%;
+    left: 0%;
+    background-color: aqua;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-family: Haettenschweiler;
+}
+
+.Gender {
+    z-index: 100;
+    position: absolute;
+    font-size: 24px;
+    width: 50%;
+    height: 10%;
+    bottom: -4%;
+    right: 0%;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: aquamarine;
+    font-family: Impact;
+}

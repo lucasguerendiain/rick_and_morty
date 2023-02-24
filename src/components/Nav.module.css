@@ -1,0 +1,8 @@
+.Nav {
+    background-color: coral;
+    color: blueviolet;
+}
+
+.active {
+    color: red;
+}

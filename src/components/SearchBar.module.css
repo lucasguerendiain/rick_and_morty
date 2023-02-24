@@ -1,0 +1,26 @@
+.Barra {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.Barra input {
+    height: 30px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+.Barra button {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    padding: 1px;
+    font-size: 20px;
+}
+
+.Barra button:hover {
+    background-color: gray;
+}

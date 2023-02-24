@@ -1,0 +1,16 @@
+.Formulario {
+    background-color: white;
+    color: black;
+}
+
+.Warning {
+    color: red;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.Danger {
+    color: cyan;
+    border: 1px solid brown;
+    border-radius: 4px;
+}
