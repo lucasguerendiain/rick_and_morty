@@ -13,7 +13,7 @@ function App () {
 
   const navigate = useNavigate();
   const username = "lucas@guere.com";
-  const password = "12340987";
+  const password = "1234567";
 
   const login = (userData) => {
     if (userData.username === username && userData.password === password){

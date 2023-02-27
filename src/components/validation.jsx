@@ -11,3 +11,18 @@ export function validation(inputs) {
     }
     return errors;
 }
+
+/*
+export function validation(inputs) {
+    let errors = {};
+    const contra = inputs.password;
+    const user = inputs.username;
+    if (!regexEmail.test(user)) errors.username = "Debe ser un correo electrónico valido";
+    if (user.length > 35) errors.username = "El username no puede tener mas de 35 caracteres";
+    if (!user) errors.username = "No se puede ingresar un username vacio";
+    if (contra.length < 6) errors.password = "La contraseña debe tener entre 6 y 10 caracteres y al menos un numero";
+    if (contra.length > 10) errors.password = "La contraseña debe tener entre 6 y 10 caracteres y al menos un numero";
+    if (!(/\d/.test(contra))) errors.password = "La contraseña debe tener entre 6 y 10 caracteres y al menos un numero";
+    return errors;
+}
+*/

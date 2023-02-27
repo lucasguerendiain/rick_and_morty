@@ -1,8 +1,26 @@
 .Nav {
     background-color: coral;
     color: blueviolet;
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 20px;
+    display: inline-flex;
+}
+
+.Irse {
+    align-self: flex-start;
+    font-size: 17px;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-weight: 500;
+    margin-right: 20px;
 }
 
 .active {
     color: red;
+    text-decoration: none;
+}
+
+.disable {
+    text-decoration: none;
 }

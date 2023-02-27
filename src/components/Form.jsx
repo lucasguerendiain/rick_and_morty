@@ -37,8 +37,8 @@ export default function Form({login}) {
                 onChange={handleChange}
                 className={errors.username && styles.Warning}
                 >
-
                 </input>
+                <br/>
                 {errors.username && <p className={styles.Danger}>{errors.username}</p>}
             </label>
             <label>Password: 
@@ -48,9 +48,10 @@ export default function Form({login}) {
                     value={inputs.password}
                     placeholder="Password..."
                     onChange={handleChange}
-                    className={errors.password && styles.Warning}>
-
+                    className={errors.password && styles.Warning}
+                >
                 </input>
+                <br/>
                 {errors.password && <p className={styles.Danger}>{errors.password}</p>}
             </label>
             <button type="submit">confirmar</button>

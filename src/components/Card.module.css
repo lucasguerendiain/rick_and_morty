@@ -3,10 +3,11 @@
     width: 350px;
     height: 500px;
     border: 1px solid black;
-    background-color: gray;
+    background-image: url(https://inforbano.com.ar/wp-content/uploads/2022/07/20220707_141509.jpg);
+    background-size: cover;
+    background-position: center;
     border-radius: 5px;
     box-shadow: 0 0 5px black;
-    display: inline-block;
 }
 
 .Button {
@@ -26,35 +27,52 @@
 .Button:hover ~ img {
     filter: grayscale(100%);
 }
-.Button:hover ~ .Nombre {
+.Button:hover ~ .link > h2::before {
+    content: "*";
+    color: red;
+    text-shadow: 3px 5px 10px rgb(0, 4, 255);
+
+}
+.Button:hover ~ .link > h2::after {
+    content: "*";
+    color: red;
+    text-shadow: 3px 5px 10px rgb(43, 0, 255);
+}
+.Button:hover ~ .link > h2{
     background-color: transparent;
-    color: black;
-    text-shadow: 3px 3px 5px rgb(255, 0, 0);
-    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 5px 10px rgb(0, 0, 0);
+    text-decoration: underline red;
+    font-weight: bolder;
+    font-size: 5vh;
     transform: rotate(-90deg);
-    font-size: 65px;
-    left: -30%;
-    top: 30%;
+    display: block;
+    left: 10%;
+    bottom: 20%;
+    padding-bottom: 20%;
 }
 .Button:hover ~ .Gender {
-    background-color: transparent;
+    background-color: grey;
     font-family: Impact, fantasy;
     width: 50%;
     border: 0;
-    font-size: 30px;
+    font-size: 20px;
     text-align: start;
-    color: rgb(255, 0, 255);
+    color: fuchsia;
+    text-shadow: 3px 3px 5px whitesmoke;
+    transition: 2s;
 }
 .Button:hover ~ .Specie {
-    background-color: transparent;
+    background-color: grey;
     font-family: Luminari, fantasy;
     width: 50%;
-    font-size: 30px;
+    font-size: 20px;
     border: 0;
     text-align: end;
-    color: rgb(255, 0, 255);
+    color: fuchsia;
+    text-shadow: 3px 3px 5px whitesmoke;
+    transition: 2s;
 }
-
 
 .CardDiv img {
     max-width:100%;
@@ -63,6 +81,12 @@
     position: relative;
     top: 0%;
     left: 0%;
+    transition: 2s;
+}
+
+.CardDiv img:hover {
+    transition: 2s;
+    transform: rotateY(180deg);
 }
 
 .Nombre {
@@ -71,6 +95,7 @@
     color: rgb(17, 39, 206);
     font-size: 30px;
     font-family: verdana;
+    padding-right: 20%;
     background-color: rgb(171, 169, 169);
     left: 0%;
     top: -5%;
@@ -83,27 +108,46 @@
 .Specie {
     z-index: 100;
     position: absolute;
-    font-size: 24px;
+    font-size: 20px;
     width: 50%;
-    height: 10%;
+    height: 11%;
     bottom: -4%;
     left: 0%;
     background-color: aqua;
-    border: 1px solid black;
-    border-radius: 3px;
+    border: 2px solid black;
+    border-radius: 2px;
     font-family: Haettenschweiler;
+}
+
+.Specie:hover::before {
+    content: "Specie: ";
+    display: block;
+}
+.Specie:hover {
+    height: 15%;
 }
 
 .Gender {
     z-index: 100;
     position: absolute;
-    font-size: 24px;
+    font-size: 21px;
     width: 50%;
-    height: 10%;
+    height: 11%;
     bottom: -4%;
     right: 0%;
-    border: 1px solid black;
-    border-radius: 3px;
+    border: 2px solid black;
+    border-radius: 2px;
     background-color: aquamarine;
     font-family: Impact;
+}
+.Gender:hover::before {
+    content: "Gender: ";
+    display: block;
+}
+.Gender:hover {
+    height: 15%;
+}
+
+.link {
+    text-decoration: none;
 }

@@ -1,3 +1,21 @@
 .Detalle {
-    background-color: white;
+    position: relative;
+    background-color: darkcyan;
+    border: 3px solid grey;
+    border-radius: 15px;
+    display: flexbox;
+    text-align: left;
+    outline: 2px solid black;
+}
+
+.Detalle img {
+    float: right;
+    background: content-box;
+    background-color: blueviolet;
+    transition: 1.5s;
+}
+
+.Detalle img:hover {
+    transition: 1.5s;
+    transform:rotateX(90deg) rotateZ(-75deg);
 }

@@ -12,10 +12,11 @@ export default function Nav({onSearch, logout}) {
     if (pathname !== "/"){
     return(
         <div className={styles.Nav}>
-            <button onClick={() => {if (window.confirm("vo' tas seguro/a?")) logout()}}>log out</button>
-            <NavLink to={"/home"} className={({isActive}) => isActive ? styles.active : styles.disable}>Las casa'</NavLink>
+            <button onClick={() => {if (window.confirm("vo' tas seguro/a?")) logout()}} className={styles.Irse}>log out</button>
+            <br/>
+            <NavLink to={"/home"} className={({isActive}) => isActive ? styles.active : styles.disable}>*Casita*</NavLink>
             <hr/>
-            <NavLink to={"/About"} className={({isActive}) => isActive ? styles.active : styles.disable}>El Guere</NavLink>
+            <NavLink to={"/About"} className={({isActive}) => isActive ? styles.active : styles.disable}>FAQ</NavLink>
             <SearchBar onSearch={onSearch}/>
             <button onClick={() => onSearch(randomNumber(826))}>Random</button>
         </div>
