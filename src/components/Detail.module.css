@@ -3,19 +3,40 @@
     background-color: darkcyan;
     border: 3px solid grey;
     border-radius: 15px;
-    display: flexbox;
-    text-align: left;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     outline: 2px solid black;
+    max-width: 70%;
+    height: 70vh;
+}
+
+.Detalle h1 {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.Detalle h2 {
+    font-size: 30px;
+
+}
+
+.Detalle button {
+    width: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .Detalle img {
-    float: right;
-    background: content-box;
-    background-color: blueviolet;
-    transition: 1.5s;
+    justify-content: flex-start;
+    align-self: flex-end;
+    transition: 2s;
 }
 
 .Detalle img:hover {
-    transition: 1.5s;
+    transition: 2s;
     transform:rotateX(90deg) rotateZ(-75deg);
 }

@@ -1,10 +1,11 @@
 .Nav {
-    background-color: coral;
-    color: blueviolet;
-    margin-bottom: 20px;
-    margin-top: 0;
+    background-color: rgb(255, 127, 80);
+    color: rgb(132, 0, 255);
+    width: 90vw;
     font-size: 20px;
-    display: inline-flex;
+    margin: 0 0 10px 0px;
+    padding: 0;
+    display:inline-flex;
 }
 
 .Irse {
@@ -19,8 +20,12 @@
 .active {
     color: red;
     text-decoration: none;
+    border: none;
+    width: 15vw;
 }
 
 .disable {
     text-decoration: none;
+    border: none;
+    width: 15vw;
 }

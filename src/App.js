@@ -6,6 +6,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import About from './components/About';
 import Detail from './components/Detail';
 import Form from './components/Form';
+import Favorites from './components/Favorites';
 
 function App () {
   const [characters, setCharacters] = useState([]);
@@ -57,9 +58,10 @@ function App () {
       <Nav onSearch={onSearch} logout={logout}/>
       <Routes>
         <Route path="/" element={<Form login={login}/>}>Form</Route>
-        <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}>Home</Route>
-        <Route path='/about' element={<About/>}>About</Route>
-        <Route path='/detail/:detailId' element={<Detail/>}>CardDetail</Route>
+        <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}>Home</Route>
+        <Route path="/about" element={<About/>}>About</Route>
+        <Route path="/favorites" element={<Favorites/>}>Favorites</Route>
+        <Route path="/detail/:detailId" element={<Detail/>}>CardDetail</Route>
       </Routes>
     </div>
   )

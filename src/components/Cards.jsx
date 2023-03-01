@@ -14,7 +14,7 @@ export default function Cards(props) {
             event={() => onClose(char.id)}
             id={char.id}
             index={index}
-         />
+         key={"card" + index}/>
       })}
    </div>
    );

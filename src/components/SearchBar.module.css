@@ -1,14 +1,14 @@
 .Barra {
     display: flex;
     margin: auto;
-    width: 50%;
+    width: 30vw;
     margin-top: 20px;
-    margin-right: 70px;
+    margin-right: 15%;
     justify-content: center;
 }
 
 .Barra input {
-    height: 30px;
+    height: 25px;
     border: 2px solid gray;
     border-radius: 5px;
     font-size: 30px;

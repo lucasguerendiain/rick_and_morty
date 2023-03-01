@@ -7,7 +7,7 @@ import { NavLink, useLocation } from "react-router-dom";
 export default function Nav({onSearch, logout}) {
     const {pathname} = useLocation()
     const randomNumber = (max) => {
-        return Math.floor(Math.random() * max)
+        return Math.floor(Math.random() * max) + 1;
     }
     if (pathname !== "/"){
     return(
@@ -17,8 +17,10 @@ export default function Nav({onSearch, logout}) {
             <NavLink to={"/home"} className={({isActive}) => isActive ? styles.active : styles.disable}>*Casita*</NavLink>
             <hr/>
             <NavLink to={"/About"} className={({isActive}) => isActive ? styles.active : styles.disable}>FAQ</NavLink>
+            <hr></hr>
+            <NavLink to={"./favorites"} className={({isActive}) => isActive ? styles.active : styles.disable}>Favorites</NavLink>
             <SearchBar onSearch={onSearch}/>
-            <button onClick={() => onSearch(randomNumber(826))}>Random</button>
+            <button onClick={() => onSearch(randomNumber(825))}>Random</button>
         </div>
     );
     }
