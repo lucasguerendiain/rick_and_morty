@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 export function Card(props) {
-   const {name, species, gender, image, event, id, index, addFavorite, deleteFavorite, myFavorites} = props
+   const {name, species, gender, image, event, id, addFavorite, deleteFavorite, myFavorites} = props
    const [isFav, setIsFav] = useState(false)
 
    const handleFavorite = () => {
@@ -36,7 +36,7 @@ export function Card(props) {
          </Link>
          <h2 className={styles.Specie}>{species}</h2>
          <h2 className={styles.Gender}>{gender}</h2>
-         <img src={image} alt="" />
+         <img src={image} alt="" className={event ? styles.ImagenGira : styles.ImagenGirant}/>
          {isFav ? (
             <button onClick={handleFavorite} className={styles.FavButtonOn}>❤️</button>
                   ) : (

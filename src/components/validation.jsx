@@ -12,8 +12,7 @@ export function validation(inputs) {
     return errors;
 }
 
-/*
-export function validation(inputs) {
+/*export function validation(inputs) {
     let errors = {};
     const contra = inputs.password;
     const user = inputs.username;
@@ -24,5 +23,4 @@ export function validation(inputs) {
     if (contra.length > 10) errors.password = "La contraseña debe tener entre 6 y 10 caracteres y al menos un numero";
     if (!(/\d/.test(contra))) errors.password = "La contraseña debe tener entre 6 y 10 caracteres y al menos un numero";
     return errors;
-}
-*/
+}*/

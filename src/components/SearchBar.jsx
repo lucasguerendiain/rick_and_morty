@@ -8,10 +8,16 @@ export default function SearchBar({onSearch}) {
       setCharacter(event.target.value);
    }
 
+   const onSearchMask = () => {
+      let aux = character;
+      setCharacter("");
+      onSearch(aux);
+   }
+
    return (
       <div className={styles.Barra}>
-         <input type='search' onChange={handleInputChange}/>
-         <button onClick={() => onSearch(character)}>Agregar</button>
+         <input type='search' onChange={handleInputChange} value={character}/>
+         <button onClick={() => onSearchMask()}>Agregar</button>
       </div>
    );
 }

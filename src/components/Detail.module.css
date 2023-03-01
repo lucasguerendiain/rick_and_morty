@@ -4,8 +4,8 @@
     border: 3px solid grey;
     border-radius: 15px;
     display: flex;
-    align-items: start;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
     outline: 2px solid black;
@@ -14,7 +14,7 @@
 }
 
 .Detalle h1 {
-    font-weight: 500;
+    font-weight: 900;
     font-size: 40px;
 }
 
@@ -27,13 +27,15 @@
     width: 60px;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
 }
 
 .Detalle img {
-    justify-content: flex-start;
-    align-self: flex-end;
     transition: 2s;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
 }
 
 .Detalle img:hover {

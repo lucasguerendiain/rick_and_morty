@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(https://i.pinimg.com/originals/82/32/15/8232157f8d4e09717bf71b9a5e7d2929.jpg);
+  /*background-image: url(https://i.pinimg.com/originals/82/32/15/8232157f8d4e09717bf71b9a5e7d2929.jpg);*/
+  background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/simulated_bh.jpg);
   background-size: cover;
   background-attachment: fixed;
   display: flex;

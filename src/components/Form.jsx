@@ -1,5 +1,5 @@
 import styles from "./Form.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {validation} from "./validation.jsx";
 
 export default function Form({login}) {
@@ -16,15 +16,18 @@ export default function Form({login}) {
         setInputs({...inputs,
             [event.target.name]: event.target.value
         });
-        setErrors(validation(inputs));
     }
+
+    useEffect(() => {
+        setErrors(validation(inputs));
+    }, [inputs]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         if (Object.values(errors).length === 0) {
             login(inputs);
         } else alert("Te fallan los datos, maestro/a");
-    }
+}
 
     return (
         <form className={styles.Formulario} onSubmit={handleSubmit}>
@@ -41,6 +44,7 @@ export default function Form({login}) {
                 <br/>
                 {errors.username && <p className={styles.Danger}>{errors.username}</p>}
             </label>
+            <br></br>
             <label>Password: 
                 <input
                     type="password"

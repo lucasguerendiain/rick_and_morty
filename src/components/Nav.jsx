@@ -15,9 +15,9 @@ export default function Nav({onSearch, logout}) {
             <button onClick={() => {if (window.confirm("vo' tas seguro/a?")) logout()}} className={styles.Irse}>log out</button>
             <br/>
             <NavLink to={"/home"} className={({isActive}) => isActive ? styles.active : styles.disable}>*Casita*</NavLink>
-            <hr/>
+            <br/>
             <NavLink to={"/About"} className={({isActive}) => isActive ? styles.active : styles.disable}>FAQ</NavLink>
-            <hr></hr>
+            <br></br>
             <NavLink to={"./favorites"} className={({isActive}) => isActive ? styles.active : styles.disable}>Favorites</NavLink>
             <SearchBar onSearch={onSearch}/>
             <button onClick={() => onSearch(randomNumber(825))}>Random</button>

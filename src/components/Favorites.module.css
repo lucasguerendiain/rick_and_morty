@@ -1,4 +1,15 @@
-.Fav {
+.FavDiv {
+    display: block;
+}
+.FavDiv select {
+    padding: 7px;
+    margin: 8px 0 15px 8px;
+    font-size: 1rem;
+    z-index: 101;
+    width: 10vw;
+}
+
+.FavList {
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;

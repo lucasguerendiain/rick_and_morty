@@ -21,6 +21,7 @@ function App () {
       setAccess(true);
       navigate("/home");
     }
+    else alert("Usuario y/o Contraseña incorrecta, titán");
   }
 
   const logout = () => {
