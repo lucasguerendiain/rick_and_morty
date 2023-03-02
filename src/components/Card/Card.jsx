@@ -28,11 +28,26 @@ export function Card(props) {
       });
    }, [myFavorites]);
 
+   const handleGender = () => {
+      switch(gender){
+         case "Male":
+            return styles.NombreMale;
+         case "Female":
+            return styles.NombreFemale;
+         case "Genderless":
+            return styles.NombreGenderless;
+         case "unknown":
+            return styles.NombreUnknown;
+         default:
+            return "";
+      }
+   }
+
    return (
       <div className={styles.CardDiv}>
          {event ? (<button className={styles.Button} onClick={event}>X</button>) : null}
          <Link to={`/detail/${id}`} className={styles.link}>
-            <h2 className={styles.Nombre}>{name}</h2>
+            <h2 className={handleGender()}>{name}</h2>
          </Link>
          <h2 className={styles.Specie}>{species}</h2>
          <h2 className={styles.Gender}>{gender}</h2>
