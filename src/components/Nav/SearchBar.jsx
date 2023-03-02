@@ -14,9 +14,15 @@ export default function SearchBar({onSearch}) {
       onSearch(aux);
    }
 
+   const handleKeyDown = (event) => {
+      if (event.key === "Enter") {
+         onSearchMask();
+      }
+   }
+
    return (
       <div className={styles.Barra}>
-         <input type='search' onChange={handleInputChange} value={character}/>
+         <input type='search' onChange={handleInputChange} value={character} onKeyDown={handleKeyDown}/>
          <button onClick={() => onSearchMask()}>Agregar</button>
       </div>
    );

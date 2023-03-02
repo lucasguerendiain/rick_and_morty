@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
-import { addFavorite, deleteFavorite } from "../redux/actions/actions";
+import { addFavorite, deleteFavorite } from "../../redux/actions/actions";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 

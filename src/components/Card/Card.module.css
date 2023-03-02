@@ -1,7 +1,7 @@
 .CardDiv {
     position: relative;
-    width: 350px;
-    height: 500px;
+    width: 20vw;
+    height: 45vh;
     border: 1px solid black;
     background-image: url(https://inforbano.com.ar/wp-content/uploads/2022/07/20220707_141509.jpg);
     background-size: cover;
@@ -50,10 +50,10 @@
     text-decoration: underline red;
     font-weight: bolder;
     font-size: 4vh;
-    transform: rotate(-90deg);
+    transform: rotate(-45deg);
     display: block;
-    left: 10%;
-    bottom: 40%;
+    left: 5%;
+    bottom: 30%;
 }
 .Button:hover ~ .Gender {
     background-color: grey;

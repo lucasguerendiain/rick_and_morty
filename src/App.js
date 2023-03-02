@@ -1,11 +1,11 @@
 import './App.css'
 import Cards from './components/Cards.jsx'
-import Nav from "./components/Nav.jsx";
+import Nav from "./components/Nav/Nav.jsx";
 import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import About from './components/About';
-import Detail from './components/Detail';
-import Form from './components/Form';
+import About from './components/About/About';
+import Detail from './components/Detail/Detail';
+import Form from './components/Form/Form';
 import Favorites from './components/Favorites';
 
 function App () {

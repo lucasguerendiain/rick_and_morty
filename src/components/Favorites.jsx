@@ -1,5 +1,5 @@
 import styles from "./Favorites.module.css";
-import Card from "./Card";
+import Card from "./Card/Card";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 import { orderCards, filterCards } from "../redux/actions/actions";
