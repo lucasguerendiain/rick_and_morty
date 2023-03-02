@@ -11,6 +11,7 @@ export default function Form({login}) {
         username: "",
         password: "",
     });
+    const [viewPassword, setViewPassword] = useState(false);
 
     const handleChange = (event) => {
         setInputs({...inputs,
@@ -24,10 +25,16 @@ export default function Form({login}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (Object.values(errors).length === 0) {
-            login(inputs);
-        } else alert("Te fallan los datos, maestro/a");
-}
+        if (event.nativeEvent.submitter.name === "submit"){
+            if (Object.values(errors).length === 0) {
+                login(inputs);
+            } else alert("Te fallan los datos, maestro/a");
+        }
+    }
+
+    const changeView = () => {
+        setViewPassword(!viewPassword);
+    }
 
     return (
         <form className={styles.Formulario} onSubmit={handleSubmit}>
@@ -47,7 +54,7 @@ export default function Form({login}) {
             <br></br>
             <label>Password: 
                 <input
-                    type="password"
+                    type={viewPassword ? "text" : "password"}
                     name="password"
                     value={inputs.password}
                     placeholder="Password..."
@@ -55,10 +62,11 @@ export default function Form({login}) {
                     className={errors.password && styles.Warning}
                 >
                 </input>
+                <button type="flat" onClick={changeView} name="toggle">{viewPassword ? "*hide*" : "*show*"}</button>
                 <br/>
                 {errors.password && <p className={styles.Danger}>{errors.password}</p>}
             </label>
-            <button type="submit">confirmar</button>
+            <button type="submit" className={styles.Confirm} name="submit">confirmar</button>
         </form>
     );
 }
