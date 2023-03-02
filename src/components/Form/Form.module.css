@@ -6,6 +6,7 @@
     height: 35vh;
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .Formulario label{
@@ -16,6 +17,12 @@
     font-size: 20px;
     margin: 8px 0 10px 0;
 }
+
+.View {
+    font-size: 0.9rem;
+    margin-left: 3px;
+}
+
 .Confirm {
     margin-top: 20px;
     font-size: 20px;

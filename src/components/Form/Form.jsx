@@ -32,7 +32,7 @@ export default function Form({login}) {
         }
     }
 
-    const changeView = () => {
+    const handleView = () => {
         setViewPassword(!viewPassword);
     }
 
@@ -62,7 +62,7 @@ export default function Form({login}) {
                     className={errors.password && styles.Warning}
                 >
                 </input>
-                <button type="flat" onClick={changeView} name="toggle">{viewPassword ? "*hide*" : "*show*"}</button>
+                <button type="flat" onClick={handleView} name="toggle" className={styles.View}>{viewPassword ? "*hide*" : "*show*"}</button>
                 <br/>
                 {errors.password && <p className={styles.Danger}>{errors.password}</p>}
             </label>
