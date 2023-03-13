@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form';
 import Favorites from './components/Favorites';
+import axios from "axios";
 
 function App () {
   const [characters, setCharacters] = useState([]);
@@ -34,10 +35,10 @@ function App () {
   }, [access]);
 
   const onSearch = (character) => {
-    fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
-    .then((response) => response.json())
+    axios.get(`http://localhost:3001/rickandmorty/onsearch/${character}`)
+    .then((response) => response.data)
     .then((data) => {
-      if (data.name) {
+            if (data.name) {
         if (characters.length === 0) {
           setCharacters((oldChars) => [...oldChars, data]);
         } else {
@@ -48,7 +49,28 @@ function App () {
       } else {
           window.alert('No hay personajes con ese ID');
       }
-    });
+    })
+    .catch((error) => {
+      console.log(error.message);
+    })
+    // fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
+    // .then((response) => response.json())
+    // .then((data) => {
+    //   if (data.name) {
+    //     if (characters.length === 0) {
+    //       setCharacters((oldChars) => [...oldChars, data]);
+    //     } else {
+    //         if ((characters.filter((char) => char.id === data.id).length === 0)){
+    //           setCharacters((oldChars) => [...oldChars, data]);
+    //       }
+    //     }
+    //   } else {
+    //       window.alert('No hay personajes con ese ID');
+    //   }
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // })
   }
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id !== id))

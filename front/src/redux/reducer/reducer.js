@@ -1,4 +1,4 @@
-import { ADD_FAVORITE, DELETE_FAVORITE, ORDER, FILTER } from "../actions/actions";
+import { ADD_FAVORITE, DELETE_FAVORITE, ORDER, FILTER, GET_FAVORITES } from "../actions/actions";
 
 const initialState = {
     myFavorites: [],
@@ -10,8 +10,8 @@ const rootReducer = (state = initialState, action) => {
         case ADD_FAVORITE:
             return {
                 ...state,
-                myFavorites: [...state.allCharacters, action.payload],
-                allCharacters: [...state.allCharacters, action.payload]
+                myFavorites: action.payload,
+                allCharacters: action.payload
             };
         case DELETE_FAVORITE:
             return {
@@ -34,6 +34,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 myFavorites: nuevaOrden
+            };
+        case GET_FAVORITES:
+            return {
+                ...state,
+                myFavorites: action.payload
             };
         default:
             return {...state};

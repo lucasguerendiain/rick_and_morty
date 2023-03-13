@@ -2,7 +2,8 @@ import styles from "./Favorites.module.css";
 import Card from "./Card/Card";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import { orderCards, filterCards } from "../redux/actions/actions";
+import { orderCards, filterCards, getFavorites } from "../redux/actions/actions";
+import { useEffect } from "react";
 
 export function Favorites({ myFavorites }) {
     const dispatch = useDispatch();
@@ -14,6 +15,10 @@ export function Favorites({ myFavorites }) {
     const handleFilter = (event) => {
         dispatch(filterCards(event.target.value));
     }
+
+    useEffect(() => {
+        dispatch(getFavorites());
+    }, []);
 
     return (
         <div className={styles.FavDiv}>

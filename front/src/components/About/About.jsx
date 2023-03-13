@@ -1,5 +1,4 @@
 import styles from "./About.module.css";
-//import laSeñora from "../assets/manuelita-img.jpg";
 import laSeñora from "../../assets/Manuelita-Pehuajó.JPG";
 
 export default function About() {

@@ -16,7 +16,7 @@ export default function Detail() {
                 window.alert("No hay personajes con ese ID");
             }
         })
-        .catch((err) => {
+        .catch(() => {
             window.alert("No hay personajes con ese ID");
         });
         return setCharacter({});
@@ -32,7 +32,7 @@ export default function Detail() {
             <h2>Status: {character.status}</h2>
             <h2>Specie: {character.species}</h2> 
             <h2>Gender: {character.gender}</h2>
-            {character.origin && <h2>Origen: {character.origin.name}</h2>}
+            <h2>Origen: {character.origin}</h2>
             <img src={character.image} alt=""></img>
         </div>
     );
