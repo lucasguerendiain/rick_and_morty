@@ -18,3 +18,5 @@ server.use("/rickandmorty", router);
 server.listen(PORT, () => {
     console.log('Server raised in port ' + PORT);
 });
+
+module.exports = server;

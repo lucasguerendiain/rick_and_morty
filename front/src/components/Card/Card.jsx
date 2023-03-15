@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 export function Card(props) {
-   const {name, species, gender, image, event, id, addFavorite, deleteFavorite, myFavorites} = props
+   const {name, species, gender, image, event, id, deleteFavorite, myFavorites} = props
    const [isFav, setIsFav] = useState(false)
 
    const handleFavorite = () => {

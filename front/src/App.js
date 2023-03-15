@@ -3,10 +3,10 @@ import Cards from './components/Cards.jsx'
 import Nav from "./components/Nav/Nav.jsx";
 import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import About from './components/About/About';
-import Detail from './components/Detail/Detail';
-import Form from './components/Form/Form';
-import Favorites from './components/Favorites';
+import About from './components/About/About.jsx';
+import Detail from './components/Detail/Detail.jsx';
+import Form from './components/Form/Form.jsx';
+import Favorites from './components/Favorites.jsx';
 import axios from "axios";
 
 function App () {
@@ -53,24 +53,6 @@ function App () {
     .catch((error) => {
       console.log(error.message);
     })
-    // fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
-    // .then((response) => response.json())
-    // .then((data) => {
-    //   if (data.name) {
-    //     if (characters.length === 0) {
-    //       setCharacters((oldChars) => [...oldChars, data]);
-    //     } else {
-    //         if ((characters.filter((char) => char.id === data.id).length === 0)){
-    //           setCharacters((oldChars) => [...oldChars, data]);
-    //       }
-    //     }
-    //   } else {
-    //       window.alert('No hay personajes con ese ID');
-    //   }
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // })
   }
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id !== id))
