@@ -1,6 +1,6 @@
-const app = require('../src/server');
+const app = require('../src/app');
 const request = require('supertest');
-//const agent = session(app);
+//const agent = request(app);
 
 
 describe("test de RUTAS", () => {
@@ -28,9 +28,11 @@ describe("test de RUTAS", () => {
                 expect(Object.keys(data.body)).toContain("species");
                 expect(Object.keys(data.body)).toContain("gender");
                 expect(Object.keys(data.body)).toContain("image");
+                //en vez de esto, le puedo mandar todo el objeto al equal
         });
         it("responde con status: 500 en caso de error", () => {
-            agent.get('/rickandmorty/detail/IDqueNoExiste').expect(500);
+            agent
+                .get('/rickandmorty/detail/IDqueNoExiste').expect(500);
         });
     })
 })

@@ -25,11 +25,9 @@ export default function Form({login}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (event.nativeEvent.submitter.name === "submit"){
-            if (Object.values(errors).length === 0) {
-                login(inputs);
-            } else alert("Te fallan los datos, maestro/a");
-        }
+        if (Object.values(errors).length === 0) {
+            login(inputs);
+        } else alert("Te fallan los datos, maestro/a");
     }
 
     const handleView = () => {
@@ -62,7 +60,7 @@ export default function Form({login}) {
                     className={errors.password && styles.Warning}
                 >
                 </input>
-                <button type="flat" onClick={handleView} name="toggle" className={styles.View}>{viewPassword ? "*hide*" : "*show*"}</button>
+                <button type="button" onClick={handleView} name="toggle" className={styles.View}>{viewPassword ? "*hide*" : "*show*"}</button>
                 <br/>
                 {errors.password && <p className={styles.Danger}>{errors.password}</p>}
             </label>
