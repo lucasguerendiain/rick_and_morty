@@ -1,21 +1,38 @@
-let favs = require("../utils/favs");
+const { favorite } = require('../DB_connection');
 
-function postFav(req, res) {
-    let match = favs.find((char) => Number(char.id) === Number(req.body.id));
-    if (!match){
-        favs.push(req.body);
+async function postFav(req, res) {
+    try {
+        if (req.body.values().length !== 7) return res.status(400).json({message: "faltan datos"});
+        const [char, created] = await favorite.findOrCreate({
+            where: req.body
+            })
+        console.log({char: char.name, creado: created});
+    } catch(error) {
+        res.status(400).json(error.message);
+    }
+};
+
+async function getFavs(req, res) {
+    try {
+        const favs = await favorite.findAll();
         res.status(200).json(favs);
-    } else res.status(400).send("ya esta ese personaje");
+    } catch (error) {
+        res.status(400).json(error.message);
+    }
 };
 
-function getFavs(req, res) {
-    res.status(200).json(favs);
-};
-
-function deleteFav(req, res) {
-    const { id } = req.params;
-    favs = favs.filter((char) => char.id !== Number(id));
-    res.status(200).json(favs);
+async function deleteFav(req, res) {
+    try {
+        const { id } = req.params;
+        const victimFav = await favorite.findByPk(id);
+        if (victimFav) {
+            victimFav.destroy();
+            res.status(200).send(victimFav);
+        }
+        else throw new Error("no existe esto, crack de la vida");
+    } catch (error) {
+        res.status(400).json(error.message);
+    }
 };
 
 
